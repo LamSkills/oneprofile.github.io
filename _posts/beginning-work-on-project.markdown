@@ -60,6 +60,12 @@ The drush package is not available among all gem packages, so I supposed that th
 
 #### atom, slack & sqlectron
 
-I find a bug that I can't solve. The grep command is not working properly with pipelines when used in "command" Ansible property. I found a temporary solution to make the atom package downloaded and installed but I am not very satisfied with my solution.
+I find a bug that make me waste a lot of time. The grep command was not working properly with pipelines when used in "command" Ansible property. I solved this issue by creating a .sh script which get the version of installed Atom, used in the when's condition of setup-Fedora.yml file. I also modified the condition, because of the possibility that atom is not installed yet, so that the version of Atom will be empty instead of a version number.
 
-The when's property condition do not accept accents in value for numeric comparison, which is logic, so I make the version variable empty when the package is not found on the machine.
+#### chrome
+
+I find a new URL for chrome repository. I download the rpm file to /tmp/ directory, then install it with yum, as the install didn't work before.
+
+#### bashcustom
+
+Bashcustom installation is working but there is a problem when using git : I did not see the active branch. The same problem happens when using docker : when I attach the Docker daemon to a container in interactive mode, I cannot see [root@containerId] 
