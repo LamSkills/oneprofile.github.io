@@ -69,3 +69,19 @@ I find a new URL for chrome repository. I download the rpm file to /tmp/ directo
 #### bashcustom
 
 Bashcustom installation is working but there is a problem when using git : I did not see the active branch. The same problem happens when using docker : when I attach the Docker daemon to a container in interactive mode, I cannot see [root@containerId] 
+
+#### virtualbox
+
+The library elfutils-libelf-devel was missing, we have to add it to the Ansible playbook.
+
+#### idea
+
+IntelliJ was installed, but I could not launch it. I found the solution, my system was using another jdk. To choose the JDK installed with our Ansible playbook, we have to execute this command, and enter the number corresponding to our jdk (/usr/java/jdk1.8.0_181-amd64/jre/bin/java) :
+
+```ssh
+sudo update-alternatives --config java
+```
+
+#### vscode
+
+I added the installation of Visual Studio Code to the playbook by creating the roles and tasks for Fedora and CentOS distribution
